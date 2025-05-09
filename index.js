@@ -13,8 +13,20 @@ console.log(orderedFlavors);
 
 
 // A loop is used to iterate through the array of flavors.
+const orderedIceCream = orderedFlavors.map((string) => string.trim());
+
+
 // An object is used to keep count of how many orders there are of each flavor.
+const count = {};
+
+
 // The program correctly counts the number of each flavor in the user's input.
-for (let i=0; i<orderedFlavors.length; i++) {
-    console.log(orderedFlavors[i])
+let flavor;
+for (const flavor of orderedFlavors) {
+    if (count[flavor]) {
+        count[flavor] += 1;
+    } else {
+        count[flavor] = 1;
+    }
 }
+console.log(count);
